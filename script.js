@@ -9,8 +9,8 @@ let c = 2;
 let sum = (b + c);
 
 //в одному gb 1000mb
-document.querySelector('.enter').onclick = countOfFiles; 
-function countOfFiles(){
+document.querySelector('.enter').onclick = countOfFiles;
+function countOfFiles() {
     let usersFleshDrive = document.querySelector('.count-gb').value;
     let fleshDrive = (usersFleshDrive * 1000)
     let filesSize = 820;
@@ -20,11 +20,11 @@ function countOfFiles(){
 
 
 //скільки можна купити шоколадок і скільки решти залишиться
-document.querySelector('.enter2').onclick = buyingChoco;
-function  buyingChoco(){
-    let usersMoney = document.querySelector('.uesrsmoney').value;
+document.querySelector('.done').onclick = buyingChoco;
+function buyingChoco() {
+    let usersMoney = document.querySelector('.usersmoney').value;
     let priceOfBar = document.querySelector('.chock-bar-price').value;
-    
+
     var countOfBars
     countOfBars = usersMoney / priceOfBar;
     document.querySelector('.output1').innerHTML = countOfBars;
@@ -36,28 +36,29 @@ function  buyingChoco(){
 }
 
 //змінити порядок цифр
-document.querySelector('.enter3').onclick = countNumbers;
-var threeDiginNumber = document.querySelector('numbers').value;
+document.querySelector('.push').onclick = countNumbers;
 
-function countNumbers(threeDiginNumber){
+function countNumbers() {
     let result = 0;
-    while (threeDiginNumber) {
-    result = result * 10 + threeDiginNumber % 10;
-    threeDiginNumber = Math.floor(threeDiginNumber / 10);
-  }
+    var threeDigitNumber = document.querySelector('.numbers').value;
 
-  return result;
+    while (threeDigitNumber) {
+        result = result * 10 + threeDigitNumber % 10;
+        threeDigitNumber = Math.floor(threeDigitNumber / 10);
+    }
+
+    document.querySelector('.output3').innerHTML = result;
 }
-console.log(getReversedNum(threeDiginNumber));
 
 //deposit
 // 5%/12=проц на один місяць, (5%/12)*2 за два місяці
-document.querySelector('.enter4').onclick = calculateDeposite;
-function calculateDeposite(){
+document.querySelector('.calculate').onclick = calculateDeposite;
+
+function calculateDeposite() {
     let procentPerTwoMonthes = (5 / 12 * 2);
-    let investedMoney = document.querySelector('sum-of-money').value;
-    let outputMoney = (investedMoney / 100 * 5 *2)
-document.querySelector('calculate').innerHTML = outputMoney;
+    let investedMoney = document.querySelector('.sum-of-money').value;
+    let outputMoney = (investedMoney / 100 * 5 * 2)
+    document.querySelector('.output4').innerHTML = outputMoney;
 
 }
 
